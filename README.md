@@ -124,7 +124,6 @@ This repository contains a comprehensive collection of shell scripts designed fo
 ## Notes
 
 - Some scripts may require specific input files or dependencies.
-- Scripts marked with `*` require testing or further refinements.
 
 ## Contributions
 
