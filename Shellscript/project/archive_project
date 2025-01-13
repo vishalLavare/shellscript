@@ -1,0 +1,34 @@
+#!/bin/bash
+#$Revision:001$
+#$Mon Jan 13 06:57:04 UTC 2025$
+
+# Variables
+BASE=/mnt/d/Linux/file
+DEPTH=1
+
+# Check if the directory is present or not
+if [ ! -d "$BASE" ];
+then
+    echo "Directory does not exist: $BASE"
+    exit 1
+fi
+
+# Create 'archive' folder if not present
+if [ ! -d "$BASE/archive" ];
+then
+    mkdir "$BASE/archive"
+fi
+
+# Find and process files larger than 20MB
+find "$BASE" -maxdepth "$DEPTH" -type f -size +20M | while IFS= read -r file;
+do
+    if [ -f "$file" ];
+    then
+        echo "[$(date "+%y-%m-%d %H:%M:%S")] Archiving $file ==> $BASE/archive"
+        gzip "$file" || exit 1
+        mv "$file.gz" "$BASE/archive" || exit 1
+    else
+        echo "File not found: $file"
+    fi
+done
+
