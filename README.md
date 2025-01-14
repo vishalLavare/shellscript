@@ -17,10 +17,8 @@ This repository contains a comprehensive collection of shell scripts designed fo
    - [Project-Specific Scripts](#project-specific-scripts)
 2. [Supporting Files](#supporting-files)
 3. [Project Directory](#project-directory)
-4. [How to Use](#how-to-use)
-5. [Notes](#notes)
-6. [Contributions](#contributions)
-7. [License](#license)
+4. [Contributions](#contributions)
+5. [License](#license)
 
 ## File Descriptions
 
